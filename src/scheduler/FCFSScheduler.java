@@ -1,9 +1,12 @@
 package scheduler;
 
 import actors.*;
+import actors.exceptions.DishFinishedException;
 import event.TimeListener;
+import logger.HTMLLogger;
 import models.Dish;
 import models.RecipeTask;
+import scheduler.models.FCFSDish;
 
 import java.util.*;
 
@@ -42,6 +45,7 @@ public class FCFSScheduler implements Scheduler, TimeListener {
                 if (currentDish.hasTime()){
                     // if there's still time remaining, do current dish
                     System.out.println("There's still time remaining on the dish, returning to chef : " + currentDish);
+                    HTMLLogger.cook = currentDish.toHTMLString();
                     return currentDish;
                 } else {
                     // current dish's time is 0
@@ -50,6 +54,7 @@ public class FCFSScheduler implements Scheduler, TimeListener {
                     if (currentDish.nextTask() != null){
                         if (currentDish.nextTask().isCook()){
                             System.out.println("The next task for this dish is cooking, returning dish : " + currentDish);
+                            HTMLLogger.cook = currentDish.toHTMLString();
                             return currentDish;
                         } else {
                             System.out.println("The next task for this dish is not a cooking task, returning this to assistants : " + currentDish);
@@ -70,31 +75,49 @@ public class FCFSScheduler implements Scheduler, TimeListener {
     public Dish dequeue(){
         Dish returnDish = readyToCookFood.peek();
         if (returnDish != null)
+            HTMLLogger.cook = returnDish.toHTMLString();
             readyToCookFood.remove(returnDish);
+            HTMLLogger.ready = HTMLLogger.convertReadyQueue(readyToCookFood);
         return returnDish;
     }
 
     public void sendDishToAssistants(Dish dish){
         assistants.addDish(dish);
         readyToCookFood.remove(dish);
+        HTMLLogger.ready = HTMLLogger.convertReadyQueue(readyToCookFood);
     }
+
+    public Boolean isEmpty(Integer currentTime){
+        if ((!costumer.hasMoreOrders(currentTime)) && (!assistants.hasDishes())){
+            System.out.println("Costumer and Assistants are empty!");
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public void time(Integer currentTime) {
         // assistants prepare the food
         System.out.println("Assistants are preparing the food: " + assistants);
-        List<Dish> readyToCookDishes = assistants.prepareFood();
+        List<Dish> readyToCookDishes = null;
+        try {
+            readyToCookDishes = assistants.prepareFood();
+        } catch (DishFinishedException e) {
+            assistants.removeDish(e.dish);
+            readyToCookDishes = new ArrayList<Dish>();
+        }
         if (readyToCookDishes.size() > 0){
             System.out.println("readyToCookDishes.size() = " + readyToCookDishes.size());
             lookupTable.addDishes(readyToCookDishes);
             for (Dish dish: readyToCookDishes){
                 readyToCookFood.add(lookupTable.lookUp(dish));
+                assistants.removeDish(dish);
             }
         }
 
         // new order comes in
         List<Dish> newOrders = this.costumer.takeOrder(currentTime);
-        printDishes(newOrders);
         if (newOrders.size() > 0){
             System.out.println("New orders come in : " + newOrders.get(0).name);
             System.out.println("Task name : " + newOrders.get(0).recipeTaskList.get(0).name);
@@ -103,6 +126,7 @@ public class FCFSScheduler implements Scheduler, TimeListener {
             lookupTable.addDishes(newOrders);
             // examine nature of order
             for(Dish dish: newOrders){
+                HTMLLogger.addRemarks(dish.name + " arrives");
                 RecipeTask firstDishTask = dish.recipeTaskList.get(0);
                 if (firstDishTask.name == "cook"){
                     System.out.println("Added to ready queue : " + newOrders.get(0).name);
@@ -112,14 +136,6 @@ public class FCFSScheduler implements Scheduler, TimeListener {
                     assistants.addDish(dish);
                 }
             }
-        }
-    }
-
-    public void printDishes(List<Dish> dishList){
-        for (Dish dish : dishList){
-            //System.out.println("dish.name = " + dish.name);
-            //System.out.println("dish type = " + dish.recipeTaskList.get(0).name);
-            //System.out.println("readyToCookFood.size() = " + readyToCookFood.size());
         }
     }
 }
@@ -158,18 +174,6 @@ class FCFSOrderLookup {
         return dishMap.get(dish.id);
     }
 
-}
-
-class FCFSDish extends Dish {
-    Integer order;
-    String name;
-
-    public FCFSDish(Integer order, Dish dish){
-        super(dish.name, dish.recipeTaskList);
-        this.id = dish.id;
-        this.name = dish.name;
-        this.order = order;
-    }
 }
 
 class FCFSComparator implements Comparator<FCFSDish>{

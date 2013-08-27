@@ -20,8 +20,9 @@ public class RecipeTask {
         return time > 0;
     }
 
-    public void work(){
+    public Integer work(){
         this.time = this.time - 1;
+        return this.time;
     }
 
     public Boolean isCook(){

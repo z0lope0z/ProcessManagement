@@ -56,9 +56,10 @@ public class Dish {
         return recipeTaskList.isEmpty();
     }
 
-    public void work(){
+    public Integer work(){
         if (currentTask().hasTime())
-            currentTask().work();
+            return currentTask().work();
+        return null;
     }
 
     public Boolean isCook(){
@@ -84,8 +85,17 @@ public class Dish {
 
     @Override
     public String toString() {
-        return "Dish{" +
+        return "Dish{name=" + name + "," +
                 "recipeTaskList=" + recipeTaskList +
                 '}';
+    }
+
+    public String toHTMLString(){
+        String recipe = "";
+        for (RecipeTask recipeTask : recipeTaskList){
+            recipe += "(" + recipeTask.name + "=" + recipeTask.time + ")\n";
+            break;
+        }
+        return name + recipe;
     }
 }

@@ -45,6 +45,10 @@ public class Chef implements TimeListener{
         return returnCurrentDish;
     }
 
+    public Boolean isCooking(){
+        return currentDish != null;
+    }
+
     /**
      * returns a dish once it's finished cooking
      *

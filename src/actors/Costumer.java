@@ -30,4 +30,21 @@ public class Costumer {
         }
         return currentlyOrdered;
     }
+
+    public void removeOrder(Dish dish){
+        for (DishOrder dishOrder: orderList){
+            if (dish.id == dishOrder.dish.id){
+                this.orderList.remove(dishOrder);
+            }
+        }
+    }
+
+    public Boolean hasMoreOrders(Integer time){
+        for (DishOrder dishOrder: orderList){
+            if (dishOrder.when > time){
+                return true;
+            }
+        }
+        return false;
+    }
 }

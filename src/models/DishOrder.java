@@ -15,4 +15,17 @@ public class DishOrder{
         this.dish = dish;
         this.when = when;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        Dish dishOrder = (Dish) o;
+        if (!dish.id.equals(dishOrder.id)) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return dish.hashCode();
+    }
 }
