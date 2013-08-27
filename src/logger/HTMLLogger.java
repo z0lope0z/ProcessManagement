@@ -26,6 +26,12 @@ public class HTMLLogger {
         assistants += dish.toHTMLString();
     }
 
+    public static void addReadyToCook(Dish dish){
+        if (ready == "none"){
+            ready = "";
+        }
+        ready += dish.toHTMLString();
+    }
 
     public static void addRemarks(String newRemark){
         if (remarks == "none"){

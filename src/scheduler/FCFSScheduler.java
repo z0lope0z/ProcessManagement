@@ -77,14 +77,12 @@ public class FCFSScheduler implements Scheduler, TimeListener {
         if (returnDish != null)
             HTMLLogger.cook = returnDish.toHTMLString();
             readyToCookFood.remove(returnDish);
-            HTMLLogger.ready = HTMLLogger.convertReadyQueue(readyToCookFood);
         return returnDish;
     }
 
     public void sendDishToAssistants(Dish dish){
         assistants.addDish(dish);
         readyToCookFood.remove(dish);
-        HTMLLogger.ready = HTMLLogger.convertReadyQueue(readyToCookFood);
     }
 
     public Boolean isEmpty(Integer currentTime){
@@ -137,6 +135,7 @@ public class FCFSScheduler implements Scheduler, TimeListener {
                 }
             }
         }
+        HTMLLogger.ready = HTMLLogger.convertReadyQueue(readyToCookFood);
     }
 }
 
