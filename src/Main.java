@@ -7,6 +7,7 @@ import models.Dish;
 import models.DishOrder;
 import models.RecipeTask;
 import scheduler.FCFSScheduler;
+import scheduler.PriorityScheduler;
 import scheduler.SJFScheduler;
 
 import java.util.ArrayList;
@@ -25,8 +26,9 @@ public class Main {
         Time time = new Time();
         Assistants assistants = new Assistants();
         Costumer costumer = createCostumer();
-        FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
+        //FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
         //SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
+        PriorityScheduler scheduler = new PriorityScheduler(costumer, assistants);
         Chef chef = new Chef(scheduler);
         Scanner input = new Scanner(System.in);
         int num = 0;
@@ -45,25 +47,26 @@ public class Main {
         List<DishOrder> orderList = new ArrayList<DishOrder>();
         orderList.add(new DishOrder(createDish(), 0));
         orderList.add(new DishOrder(createDish2(), 1));
+        orderList.add(new DishOrder(createDish3(), 1));
         return new Costumer(orderList);
     }
 
     public static Dish createDish(){
-        return new Dish("tinola", createRecipeTaskList());
+        return new Dish("bb", createRecipeTaskList());
     }
 
     public static Dish createDish2(){
-        return new Dish("adobo1", createRecipeTaskList2());
+        return new Dish("ba", createRecipeTaskList2());
     }
 
     public static Dish createDish3(){
-        return new Dish("adobo2", createRecipeTaskList2());
+        return new Dish("aa", createRecipeTaskList2());
     }
 
     public static List<RecipeTask> createRecipeTaskList(){
         List<RecipeTask> recipeList = new ArrayList<RecipeTask>();
         recipeList.add(new RecipeTask("cook", 1));
-        recipeList.add(new RecipeTask("mix", 1));
+        recipeList.add(new RecipeTask("cook", 1));
         recipeList.add(new RecipeTask("cook", 1));
         return recipeList;
     }

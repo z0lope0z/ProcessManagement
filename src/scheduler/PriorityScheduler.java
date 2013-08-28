@@ -11,15 +11,15 @@ import java.util.*;
  * Auto-generated header
  * User: lemano
  * Date: 8/28/13
- * Time: 5:26 AM
- * TODO: Shortest Job First
+ * Time: 10:36 PM
+ * TODO: Priority with preemption
  */
-public class SJFScheduler extends AbstractScheduler {
+public class PriorityScheduler extends AbstractScheduler {
     PriorityQueue<Dish> readyToCookFood = new PriorityQueue<Dish>();
 
-    public SJFScheduler(Costumer costumer, Assistants assistants) {
+    public PriorityScheduler(Costumer costumer, Assistants assistants) {
         super(costumer, assistants);
-        this.readyToCookFood = new PriorityQueue<Dish>(10, new SJFComparator());
+        this.readyToCookFood = new PriorityQueue<Dish>(10, new PriorityComparator());
     }
 
     @Override
@@ -35,30 +35,31 @@ public class SJFScheduler extends AbstractScheduler {
 
     /**
      * places a dish back into the priority queue and returns
+     *
      * @return
      */
-    public Dish requeueDequeue(Dish dish){
-       addReadyToCook(dish);
-       return dequeueReadyToCook();
+    public Dish requeueDequeue(Dish dish) {
+        addReadyToCook(dish);
+        return dequeueReadyToCook();
     }
 
     @Override
     public Dish whatIsNext(Dish currentDish, Vector<Dish> dishesQueue) {
-        if (currentDish == null){
+        if (currentDish == null) {
             return dequeueReadyToCook();
         } else {
-            if (currentDish.isDone()){
+            if (currentDish.isDone()) {
                 return dequeueReadyToCook();
             } else {
-                if (currentDish.currentTask().isCook()){
-                    if (currentDish.hasTime()){
-                        return currentDish;
+                if (currentDish.currentTask().isCook()) {
+                    if (currentDish.hasTime()) {
+                        return requeueDequeue(currentDish);
                     } else {
                         // offset
                         currentDish.finishTask();
                         // check if next task is okay
-                        if (currentDish.nextTask().isCook()){
-                            return currentDish;
+                        if (currentDish.nextTask().isCook()) {
+                            return requeueDequeue(currentDish);
                         } else {
                             sendDishToAssistants(currentDish);
                             return dequeueReadyToCook();
@@ -112,45 +113,10 @@ public class SJFScheduler extends AbstractScheduler {
 
 }
 
-class SJFComparator implements Comparator<Dish> {
+class PriorityComparator implements Comparator<Dish> {
 
     @Override
     public int compare(Dish dish, Dish dish2) {
-        if (dish.currentTask().time < dish2.currentTask().time)
-            return -1;
-        if (dish.currentTask().time > dish2.currentTask().time)
-            return 1;
-        return -1;
+        return dish.name.compareTo(dish2.name);
     }
 }
-
-// what is next for FCFS  `
-//    @Override
-//    public Dish whatIsNext(Dish currentDish, Vector<Dish> dishesQueue) {
-//        if (currentDish == null){
-//            return dequeueReadyToCook();
-//        } else {
-//            if (currentDish.isDone()){
-//                return dequeueReadyToCook();
-//            } else {
-//                if (currentDish.currentTask().isCook()){
-//                    if (currentDish.hasTime()){
-//                        return currentDish;
-//                    } else {
-//                        // offset
-//                        currentDish.finishTask();
-//                        // check if next task is okay
-//                        if (currentDish.nextTask().isCook()){
-//                            return currentDish;
-//                        } else {
-//                            sendDishToAssistants(currentDish);
-//                            return dequeueReadyToCook();
-//                        }
-//                    }
-//                } else {
-//                    sendDishToAssistants(currentDish);
-//                    return dequeueReadyToCook();
-//                }
-//            }
-//        }
-//    }
