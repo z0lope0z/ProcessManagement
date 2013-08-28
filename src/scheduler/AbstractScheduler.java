@@ -53,6 +53,9 @@ public abstract class AbstractScheduler implements Scheduler, TimeListener {
             assistants.removeDish(e.dish);
             readyToCookDishes = new ArrayList<Dish>();
         }
+        for (Dish dish: readyToCookDishes){
+            assistants.removeDish(dish);
+        }
         return readyToCookDishes;
     }
 

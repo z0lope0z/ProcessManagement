@@ -25,6 +25,7 @@ public class FCFSDish extends Dish {
         return "FCFSDish{" +
                 "order=" + order +
                 ", name='" + name + '\'' +
+                ", tasks='" + recipeTaskList + '\'' +
                 '}';
     }
 }

@@ -11,18 +11,19 @@
     <file path="/Scheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377477009515" ignored="false" />
     <file path="/Assistants.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377566556858" ignored="false" />
     <file path="/Chef.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377667758528" ignored="false" />
-    <file path="/FCFSScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377670680304" ignored="false" />
+    <file path="/FCFSScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377682078944" ignored="false" />
     <file path="/TimeListener.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377478987803" ignored="false" />
-    <file path="/Main.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377661679688" ignored="false" />
+    <file path="/Main.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377674194829" ignored="false" />
     <file path="/fragment.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377564779265" ignored="false" />
     <file path="/TaskFinishedException.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377495749158" ignored="false" />
     <file path="/DishNotCookStateException.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377495754815" ignored="false" />
     <file path="/DishOrder.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377565857939" ignored="false" />
     <file path="/HTMLLogger.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377659677174" ignored="false" />
-    <file path="/FCFSDish.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377539111719" ignored="false" />
+    <file path="/FCFSDish.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377682354314" ignored="false" />
     <file path="/DishFinishedException.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377564923539" ignored="false" />
     <file path="/SJFScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377663476008" ignored="false" />
-    <file path="/AbstractScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377662808123" ignored="false" />
+    <file path="/AbstractScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377683335273" ignored="false" />
+    <file path="/Copy.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377680774453" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,23 +83,18 @@
     <favorites_list name="cs140MP1-ver2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.78748757">
+    <splitter split-orientation="horizontal" split-proportion="0.8430983">
       <split-first>
         <leaf>
-          <file leaf-file-name="Chef.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/actors/Chef.java">
+          <file leaf-file-name="Assistants.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/actors/Assistants.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="91" column="25" selection-start="2992" selection-end="2992" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AbstractScheduler.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/scheduler/AbstractScheduler.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="35" selection-start="924" selection-end="924" vertical-scroll-proportion="0.35135135">
-                  <folding />
+                <state line="44" column="33" selection-start="902" selection-end="913" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#351#357#0" expanded="true" />
+                    <element signature="e#997#1003#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -106,25 +102,41 @@
           <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="62" column="47" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.0">
-                  <folding />
+                <state line="70" column="36" selection-start="2162" selection-end="2162" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Dish.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/models/Dish.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="62" column="21" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FCFSScheduler.java" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="FCFSScheduler.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/scheduler/FCFSScheduler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="148" column="27" selection-start="4453" selection-end="4453" vertical-scroll-proportion="0.0">
+                <state line="51" column="49" selection-start="1501" selection-end="1501" vertical-scroll-proportion="-4.2704625">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#466#472#0" expanded="true" />
+                    <element signature="e#3578#3596#0" expanded="true" />
+                    <element signature="e#4115#4125#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FCFSDish.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/scheduler/models/FCFSDish.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="31" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Copy.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/scheduler/Copy.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="26" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -146,7 +158,7 @@
           <file leaf-file-name="SJFScheduler.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/scheduler/SJFScheduler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="3" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.027675277">
+                <state line="16" column="13" selection-start="262" selection-end="262" vertical-scroll-proportion="0.48589343">
                   <folding />
                 </state>
               </provider>
@@ -164,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/event/TimeListener.java" />
         <option value="$PROJECT_DIR$/src/actors/exceptions/TaskFinishedException.java" />
         <option value="$PROJECT_DIR$/src/actors/exceptions/DishNotCookStateException.java" />
         <option value="$PROJECT_DIR$/src/models/RecipeTask.java" />
@@ -172,14 +183,15 @@
         <option value="$PROJECT_DIR$/src/actors/exceptions/DishFinishedException.java" />
         <option value="$PROJECT_DIR$/src/models/DishOrder.java" />
         <option value="$PROJECT_DIR$/src/actors/Costumer.java" />
-        <option value="$PROJECT_DIR$/src/actors/Assistants.java" />
         <option value="$PROJECT_DIR$/src/logger/HTMLLogger.java" />
         <option value="$PROJECT_DIR$/src/scheduler/SJFScheduler.java" />
         <option value="$PROJECT_DIR$/src/actors/Chef.java" />
+        <option value="$PROJECT_DIR$/src/scheduler/Copy.java" />
         <option value="$PROJECT_DIR$/src/scheduler/models/FCFSDish.java" />
+        <option value="$PROJECT_DIR$/src/actors/Assistants.java" />
         <option value="$PROJECT_DIR$/src/scheduler/AbstractScheduler.java" />
-        <option value="$PROJECT_DIR$/src/scheduler/FCFSScheduler.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/scheduler/FCFSScheduler.java" />
       </list>
     </option>
   </component>
@@ -237,6 +249,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -409,7 +422,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -424,9 +436,9 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -592,17 +604,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293979" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18395463" sideWeight="0.60683763" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3931624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18395463" sideWeight="0.6174957" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38250428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="122" width="1080" height="508" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -672,28 +684,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/actors/exceptions/DishNotCookStateException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actors/exceptions/DishFinishedException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="31" selection-start="329" selection-end="329" vertical-scroll-proportion="0.42009884">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actors/Assistants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="28" selection-start="697" selection-end="706" vertical-scroll-proportion="0.752883">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#351#357#0" expanded="true" />
-            <element signature="e#997#1003#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -730,46 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduler/SJFScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="3" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.027675277">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actors/Chef.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="25" selection-start="2992" selection-end="2992" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduler/models/FCFSDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="28" selection-start="445" selection-end="445" vertical-scroll-proportion="0.35855263" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="47" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Dish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="21" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduler/FCFSScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="27" selection-start="4453" selection-end="4453" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/logger/HTMLLogger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="0" selection-start="1676" selection-end="1859" vertical-scroll-proportion="0.0">
@@ -777,10 +731,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduler/SJFScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="262" selection-end="262" vertical-scroll-proportion="0.48589343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Dish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="28" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actors/Chef.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="66" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.4368932">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduler/Copy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="26" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduler/models/FCFSDish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduler/AbstractScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="35" selection-start="924" selection-end="924" vertical-scroll-proportion="0.35135135">
+        <state line="54" column="9" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.5232558">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actors/Assistants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="33" selection-start="902" selection-end="913" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#351#357#0" expanded="true" />
+            <element signature="e#997#1003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="36" selection-start="2162" selection-end="2162" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduler/FCFSScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="49" selection-start="1501" selection-end="1501" vertical-scroll-proportion="-4.2704625">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#466#472#0" expanded="true" />
+            <element signature="e#3578#3596#0" expanded="true" />
+            <element signature="e#4115#4125#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

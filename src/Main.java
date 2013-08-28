@@ -44,7 +44,7 @@ public class Main {
     public static Costumer createCostumer(){
         List<DishOrder> orderList = new ArrayList<DishOrder>();
         orderList.add(new DishOrder(createDish(), 0));
-        orderList.add(new DishOrder(createDish2(), 3));
+        orderList.add(new DishOrder(createDish2(), 1));
         return new Costumer(orderList);
     }
 
@@ -56,11 +56,15 @@ public class Main {
         return new Dish("adobo1", createRecipeTaskList2());
     }
 
+    public static Dish createDish3(){
+        return new Dish("adobo2", createRecipeTaskList2());
+    }
+
     public static List<RecipeTask> createRecipeTaskList(){
         List<RecipeTask> recipeList = new ArrayList<RecipeTask>();
-        recipeList.add(new RecipeTask("cook", 5));
+        recipeList.add(new RecipeTask("cook", 1));
         recipeList.add(new RecipeTask("mix", 1));
-        recipeList.add(new RecipeTask("cook", 3));
+        recipeList.add(new RecipeTask("cook", 1));
         return recipeList;
     }
 

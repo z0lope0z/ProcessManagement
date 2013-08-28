@@ -18,12 +18,12 @@ import java.util.*;
  * TODO: Brief description of the class
  */
 public class FCFSScheduler extends AbstractScheduler {
-    PriorityQueue<FCFSDish> readyToCookFood = new PriorityQueue<FCFSDish>();
+    Queue<Dish> readyToCookFood = new LinkedList<Dish>();
     FCFSOrderLookup lookupTable;
 
     public FCFSScheduler(Costumer costumer, Assistants assistants) {
         super(costumer, assistants);
-        this.readyToCookFood = new PriorityQueue<FCFSDish>(10, new FCFSComparator());
+        this.readyToCookFood = new LinkedList<Dish>();
         this.lookupTable = new FCFSOrderLookup();
     }
 
@@ -38,6 +38,7 @@ public class FCFSScheduler extends AbstractScheduler {
 
     @Override
     public Dish whatIsNext(Dish currentDish, Vector<Dish> dishesQueue) {
+        System.out.println("readyToCookFood = " + readyToCookFood);
         if (currentDish == null){
             return dequeueReadyToCook();
         } else {
@@ -46,13 +47,13 @@ public class FCFSScheduler extends AbstractScheduler {
             } else {
                 if (currentDish.currentTask().isCook()){
                     if (currentDish.hasTime()){
-                        return requeueDequeue(currentDish);
+                        return currentDish;
                     } else {
                         // offset
                         currentDish.finishTask();
                         // check if next task is okay
                         if (currentDish.nextTask().isCook()){
-                            return requeueDequeue(currentDish);
+                            return currentDish;
                         } else {
                             sendDishToAssistants(currentDish);
                             return dequeueReadyToCook();
@@ -71,7 +72,7 @@ public class FCFSScheduler extends AbstractScheduler {
         Dish returnDish = readyToCookFood.peek();
         if (returnDish != null)
             readyToCookFood.remove();
-        HTMLLogger.ready = HTMLLogger.convertFCFSReadyQueue(readyToCookFood);
+        HTMLLogger.ready = HTMLLogger.convertDishes(readyToCookFood);
         return returnDish;
     }
 
@@ -80,7 +81,7 @@ public class FCFSScheduler extends AbstractScheduler {
         List<Dish> readyToCookDishes = super.callAssistants();
         if (!readyToCookDishes.isEmpty()){
             for (Dish dish: readyToCookDishes){
-                readyToCookFood.add(lookupTable.lookUp(dish));
+                readyToCookFood.add(lookupTable.getOrCreateDish(dish));
             }
         }
         return readyToCookDishes;
@@ -90,7 +91,7 @@ public class FCFSScheduler extends AbstractScheduler {
     public List<Dish> checkAndSortCostumerOrders(Integer currentTime) {
         List<Dish> newOrders = super.checkAndSortCostumerOrders(currentTime);
         if (!newOrders.isEmpty()){
-            lookupTable.addDishes(newOrders);
+            //lookupTable.addDishes(newOrders);
         }
         return newOrders;
     }
@@ -109,7 +110,7 @@ public class FCFSScheduler extends AbstractScheduler {
     @Override
     public void addReadyToCook(Dish dish) {
         readyToCookFood.add(lookupTable.getOrCreateDish(dish));
-        HTMLLogger.ready = HTMLLogger.convertFCFSReadyQueue(readyToCookFood);
+        HTMLLogger.ready = HTMLLogger.convertDishes(readyToCookFood);
     }
 
 }
