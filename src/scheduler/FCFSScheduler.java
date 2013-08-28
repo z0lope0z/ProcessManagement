@@ -77,6 +77,7 @@ public class FCFSScheduler implements Scheduler, TimeListener {
         if (returnDish != null)
             HTMLLogger.cook = returnDish.toHTMLString();
             readyToCookFood.remove(returnDish);
+        HTMLLogger.ready = HTMLLogger.convertFCFSReadyQueue(readyToCookFood);
         return returnDish;
     }
 
@@ -110,6 +111,7 @@ public class FCFSScheduler implements Scheduler, TimeListener {
             lookupTable.addDishes(readyToCookDishes);
             for (Dish dish: readyToCookDishes){
                 readyToCookFood.add(lookupTable.lookUp(dish));
+                HTMLLogger.ready = HTMLLogger.convertFCFSReadyQueue(readyToCookFood);
                 assistants.removeDish(dish);
             }
         }
@@ -129,13 +131,13 @@ public class FCFSScheduler implements Scheduler, TimeListener {
                 if (firstDishTask.name == "cook"){
                     System.out.println("Added to ready queue : " + newOrders.get(0).name);
                     readyToCookFood.add(lookupTable.lookUp(dish));
+                    HTMLLogger.ready = HTMLLogger.convertFCFSReadyQueue(readyToCookFood);
                     System.out.println("No. of items in ready queue : " + readyToCookFood.size());
                 } else {
                     assistants.addDish(dish);
                 }
             }
         }
-        HTMLLogger.ready = HTMLLogger.convertReadyQueue(readyToCookFood);
     }
 }
 

@@ -3,6 +3,7 @@ package actors;
 import actors.exceptions.DishNotCookStateException;
 import actors.exceptions.TaskFinishedException;
 import event.TimeListener;
+import logger.HTMLLogger;
 import models.Dish;
 import models.RecipeTask;
 import scheduler.Scheduler;
@@ -89,7 +90,10 @@ public class Chef implements TimeListener{
     @Override
     public void time(Integer currentTime) {
         try {
-            cook();
+            Dish dish = cook();
+            if (dish != null){
+                HTMLLogger.cook = dish.toHTMLString();
+            }
         } catch (DishNotCookStateException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (TaskFinishedException e) {

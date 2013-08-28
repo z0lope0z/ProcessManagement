@@ -19,28 +19,28 @@ public class HTMLLogger {
     public static String assistants = "none";
     public static String remarks = "none";
 
-    public static void addAssistantDish(Dish dish){
-        if (assistants == "none"){
+    public static void addAssistantDish(Dish dish) {
+        if (assistants == "none") {
             assistants = "";
         }
         assistants += dish.toHTMLString();
     }
 
-    public static void addReadyToCook(Dish dish){
-        if (ready == "none"){
+    public static void addReadyToCook(Dish dish) {
+        if (ready == "none") {
             ready = "";
         }
         ready += dish.toHTMLString();
     }
 
-    public static void addRemarks(String newRemark){
-        if (remarks == "none"){
+    public static void addRemarks(String newRemark) {
+        if (remarks == "none") {
             remarks = "";
         }
         remarks += newRemark + "\n";
     }
 
-    public static void print(){
+    public static void print() {
         System.out.println("time = " + time);
         System.out.println("cook = " + cook);
         System.out.println("ready = " + ready);
@@ -49,27 +49,36 @@ public class HTMLLogger {
         refresh();
     }
 
-    public static String convertReadyQueue(PriorityQueue<FCFSDish> readyToCookFood){
+    public static String convertReadyQueue(PriorityQueue<Dish> readyToCookFood) {
         Iterator it = readyToCookFood.iterator();
         List<Dish> dishes = new ArrayList<Dish>();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             dishes.add((Dish) it.next());
         }
         return HTMLLogger.convertDishes(dishes);
     }
 
-    public static String convertDishes(Collection<Dish> dishes){
-        if (dishes.isEmpty()){
+    public static String convertFCFSReadyQueue(PriorityQueue<FCFSDish> readyToCookFood) {
+        Iterator it = readyToCookFood.iterator();
+        List<Dish> dishes = new ArrayList<Dish>();
+        while (it.hasNext()) {
+            dishes.add((Dish) it.next());
+        }
+        return HTMLLogger.convertDishes(dishes);
+    }
+
+    public static String convertDishes(Collection<Dish> dishes) {
+        if (dishes.isEmpty()) {
             return "none";
         }
         String returnString = "";
-        for (Dish dish : dishes){
+        for (Dish dish : dishes) {
             returnString += dish.toHTMLString();
         }
         return returnString;
     }
 
-    public static void refresh(){
+    public static void refresh() {
         cook = "none";
         ready = "none";
         assistants = "none";

@@ -7,6 +7,7 @@ import models.Dish;
 import models.DishOrder;
 import models.RecipeTask;
 import scheduler.FCFSScheduler;
+import scheduler.SJFScheduler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,8 @@ public class Main {
         Time time = new Time();
         Assistants assistants = new Assistants();
         Costumer costumer = createCostumer();
-        FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
+        //FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
+        SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
         Chef chef = new Chef(scheduler);
         Scanner input = new Scanner(System.in);
         int num = 0;
