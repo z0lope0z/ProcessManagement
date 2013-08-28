@@ -19,4 +19,12 @@ public class FCFSDish extends Dish {
         this.name = dish.name;
         this.order = order;
     }
+
+    @Override
+    public String toString() {
+        return "FCFSDish{" +
+                "order=" + order +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

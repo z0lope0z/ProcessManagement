@@ -84,7 +84,7 @@ public class Chef implements TimeListener{
             currentDish = scheduler.whatIsNext(currentDish, readyQueueDishes);
             System.out.println("Current dish was null so got new dish: " + currentDish);
         }
-        return null;
+        return currentDish;
     }
 
     @Override

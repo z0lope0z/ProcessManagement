@@ -25,8 +25,8 @@ public class Main {
         Time time = new Time();
         Assistants assistants = new Assistants();
         Costumer costumer = createCostumer();
-        //FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
-        SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
+        FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
+        //SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
         Chef chef = new Chef(scheduler);
         Scanner input = new Scanner(System.in);
         int num = 0;
@@ -59,8 +59,8 @@ public class Main {
     public static List<RecipeTask> createRecipeTaskList(){
         List<RecipeTask> recipeList = new ArrayList<RecipeTask>();
         recipeList.add(new RecipeTask("cook", 5));
-        recipeList.add(new RecipeTask("cook", 2));
-        recipeList.add(new RecipeTask("mix", 2));
+        recipeList.add(new RecipeTask("mix", 1));
+        recipeList.add(new RecipeTask("cook", 3));
         return recipeList;
     }
 

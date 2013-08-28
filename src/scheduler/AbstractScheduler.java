@@ -41,6 +41,7 @@ public abstract class AbstractScheduler implements Scheduler, TimeListener {
         callAssistants();
         checkAndSortCostumerOrders(currentTime);
         HTMLLogger.ready = HTMLLogger.convertDishes(getReadyToCookDishes());
+        System.out.println("getReadyToCookDishes() = " + getReadyToCookDishes());
     }
 
     public List<Dish> callAssistants(){
