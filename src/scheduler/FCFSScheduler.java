@@ -38,7 +38,6 @@ public class FCFSScheduler extends AbstractScheduler {
 
     @Override
     public Dish whatIsNext(Dish currentDish, Vector<Dish> dishesQueue) {
-        System.out.println("readyToCookFood = " + readyToCookFood);
         if (currentDish == null){
             return dequeueReadyToCook();
         } else {

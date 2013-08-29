@@ -77,8 +77,8 @@ public abstract class AbstractScheduler implements Scheduler, TimeListener {
     }
 
     public Boolean isEmpty(Integer currentTime){
-        if ((!costumer.hasMoreOrders(currentTime)) && (!assistants.hasDishes())){
-            System.out.println("Costumer and Assistants are empty!");
+        if ((!costumer.hasMoreOrders(currentTime)) && (!assistants.hasDishes()) && (getReadyToCookDishes().isEmpty())){
+            System.out.println("Costumer and Assistants and Ready to Cook Dishes are empty!");
             return true;
         }
         return false;

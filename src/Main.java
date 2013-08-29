@@ -8,6 +8,7 @@ import models.DishOrder;
 import models.RecipeTask;
 import scheduler.FCFSScheduler;
 import scheduler.PriorityScheduler;
+import scheduler.RRScheduler;
 import scheduler.SJFScheduler;
 
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ public class Main {
         Costumer costumer = createCostumer();
         //FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
         //SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
-        PriorityScheduler scheduler = new PriorityScheduler(costumer, assistants);
+        //PriorityScheduler scheduler = new PriorityScheduler(costumer, assistants);
+        RRScheduler scheduler = new RRScheduler(costumer, assistants, 2, 2);
         Chef chef = new Chef(scheduler);
         Scanner input = new Scanner(System.in);
         int num = 0;
@@ -52,29 +54,29 @@ public class Main {
     }
 
     public static Dish createDish(){
-        return new Dish("bb", createRecipeTaskList());
+        return new Dish("bb1", createRecipeTaskList());
     }
 
     public static Dish createDish2(){
-        return new Dish("ba", createRecipeTaskList2());
+        return new Dish("ba2", createRecipeTaskList2());
     }
 
     public static Dish createDish3(){
-        return new Dish("aa", createRecipeTaskList2());
+        return new Dish("aa3", createRecipeTaskList2());
     }
 
     public static List<RecipeTask> createRecipeTaskList(){
         List<RecipeTask> recipeList = new ArrayList<RecipeTask>();
-        recipeList.add(new RecipeTask("cook", 1));
-        recipeList.add(new RecipeTask("cook", 1));
-        recipeList.add(new RecipeTask("cook", 1));
+        recipeList.add(new RecipeTask("cook", 4));
+        recipeList.add(new RecipeTask("cook", 3));
+        recipeList.add(new RecipeTask("cook", 3));
         return recipeList;
     }
 
     public static List<RecipeTask> createRecipeTaskList2(){
         List<RecipeTask> recipeList = new ArrayList<RecipeTask>();
-        recipeList.add(new RecipeTask("cook", 2));
-        recipeList.add(new RecipeTask("cook", 2));
+        recipeList.add(new RecipeTask("cook", 3));
+        recipeList.add(new RecipeTask("cook", 4));
         recipeList.add(new RecipeTask("mix", 2));
         return recipeList;
     }
