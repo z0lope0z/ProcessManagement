@@ -64,7 +64,7 @@ public class Chef implements TimeListener{
             System.out.println("Name of task :  " + currentDish.recipeTaskList.get(0).name);
             if (currentDish.recipeTaskList.size() > 0) {
                 RecipeTask currentTask = currentDish.recipeTaskList.get(0);
-                if (currentTask.name == "cook") {
+                if (currentTask.isCook()) {
                     currentTask.time = currentTask.time - 1;
                     System.out.println("Chef cooked for one minute : " + currentDish);
                     if (currentTask.time == 0) {

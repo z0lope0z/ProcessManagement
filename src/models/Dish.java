@@ -63,7 +63,7 @@ public class Dish {
     }
 
     public Boolean isCook(){
-        return currentTask().name == "cook";
+        return currentTask().name.equals("cook");
     }
 
     @Override

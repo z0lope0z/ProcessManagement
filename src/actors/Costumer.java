@@ -47,4 +47,11 @@ public class Costumer {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Costumer{" +
+                "orderList=" + orderList +
+                '}';
+    }
 }

@@ -6,15 +6,11 @@ import logger.HTMLLogger;
 import models.Dish;
 import models.DishOrder;
 import models.RecipeTask;
+import reader.OrderReader;
 import reader.RecipeReader;
-import scheduler.FCFSScheduler;
-import scheduler.PriorityScheduler;
-import scheduler.RRScheduler;
-import scheduler.SJFScheduler;
+import scheduler.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Auto-generated header
@@ -28,11 +24,16 @@ public class Main {
         Assistants assistants = new Assistants();
         Costumer costumer = createCostumer();
         RecipeReader recipeReader = new RecipeReader();
-        System.out.println("recipeReader = " + recipeReader.read());
-        //FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
-        //SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
-        //PriorityScheduler scheduler = new PriorityScheduler(costumer, assistants);
-        RRScheduler scheduler = new RRScheduler(costumer, assistants, 2, 2);
+        List<Dish> dishList = recipeReader.read();
+        Map<String, Dish> dishLookUp = new HashMap<String, Dish>();
+        for (Dish dish: dishList){
+            dishLookUp.put(dish.name, dish);
+        }
+        OrderReader orderReader = new OrderReader(dishLookUp);
+        costumer = new Costumer(orderReader.read());
+        System.out.println("orderReader.read() = " + costumer);
+        System.out.println("createCostumer() = " + createCostumer());
+        AbstractScheduler scheduler = getScheduler(orderReader, costumer, assistants);
         Chef chef = new Chef(scheduler);
         Scanner input = new Scanner(System.in);
         int num = 0;
@@ -50,6 +51,24 @@ public class Main {
         }
     }
 
+    public static AbstractScheduler getScheduler(OrderReader orderReader, Costumer costumer, Assistants assistants){
+
+        if (orderReader.schedulerType == OrderReader.FIRST_COME_FIRST_SERVE){
+            return new FCFSScheduler(costumer, assistants);
+        }
+        if (orderReader.schedulerType == OrderReader.SHORTEST_JOB_FIRST){
+            return new SJFScheduler(costumer, assistants);
+        }
+        if (orderReader.schedulerType == OrderReader.PRIORITY){
+            return new PriorityScheduler(costumer, assistants);
+        }
+        if (orderReader.schedulerType == OrderReader.ROUND_ROBIN){
+            return new RRScheduler(costumer, assistants, orderReader.RR_TIME_QUANTUM, orderReader.RR_CONTEXT_SWITCH);
+        }
+        //default
+        return new FCFSScheduler(costumer, assistants);
+    }
+
     public static Costumer createCostumer(){
         List<DishOrder> orderList = new ArrayList<DishOrder>();
         orderList.add(new DishOrder(createDish(), 0));
@@ -59,15 +78,15 @@ public class Main {
     }
 
     public static Dish createDish(){
-        return new Dish("bb1", createRecipeTaskList());
+        return new Dish("adobo1", createRecipeTaskList());
     }
 
     public static Dish createDish2(){
-        return new Dish("ba2", createRecipeTaskList2());
+        return new Dish("adobo2", createRecipeTaskList2());
     }
 
     public static Dish createDish3(){
-        return new Dish("aa3", createRecipeTaskList2());
+        return new Dish("adobo3", createRecipeTaskList2());
     }
 
     public static List<RecipeTask> createRecipeTaskList(){

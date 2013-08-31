@@ -29,7 +29,7 @@ public class RecipeTask {
     }
 
     public Boolean isCook(){
-        return name == "cook";
+        return name.equals("cook");
     }
 
     @Override

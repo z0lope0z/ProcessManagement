@@ -28,4 +28,12 @@ public class DishOrder{
     public int hashCode() {
         return dish.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "DishOrder{" +
+                "dish=" + dish.name +
+                ", when=" + when +
+                '}';
+    }
 }

@@ -127,7 +127,7 @@ public class HTMLLogger {
         sb.append("</title>");
         sb.append("</head>");
         sb.append("<body>");
-        sb.append("<table border=\"1\">");
+        sb.append("<table border=\"1\" bordercolor=\"#000066\" style=\"background-color:#FFFF66\" width=\"100%\" cellpadding=\"3\" cellspacing=\"3\">");
         sb.append("<tr>");
         sb.append("<th>Time</th>");
         sb.append("<th>Cook</th>");
