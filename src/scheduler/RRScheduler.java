@@ -60,8 +60,6 @@ public class RRScheduler extends AbstractScheduler {
 
     @Override
     public Dish whatIsNext(Dish currentDish, Vector<Dish> dishesQueue) {
-        System.out.println("------------>>>>currentDish = " + currentDish);
-        System.out.println("------------>>>>readyToCook = " + getReadyToCookDishes());
         if (contextSwitch.isContextSwitch){
             contextSwitch.incrementAndCheckLimit();
             HTMLLogger.addRemarks("context switch");

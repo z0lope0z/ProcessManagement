@@ -1,0 +1,3 @@
+slice 2
+cut 3
+cook 5

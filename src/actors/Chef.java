@@ -65,15 +65,10 @@ public class Chef implements TimeListener{
             if (currentDish.recipeTaskList.size() > 0) {
                 RecipeTask currentTask = currentDish.recipeTaskList.get(0);
                 if (currentTask.isCook()) {
-                    System.out.println("11111currentTask = " + ((RRScheduler) scheduler).getReadyToCookDishes());
                     currentTask.time = currentTask.time - 1;
                     System.out.println("Chef cooked for one minute : " + currentDish);
                     if (currentTask.time == 0) {
-                        System.out.println("9999999currentTask = " + ((RRScheduler) scheduler).getReadyToCookDishes());
-                        System.out.println("000000000000Chef done with current task in dish : " + currentTask + ", removing..");
-                        System.out.println("currentDish = " + currentDish.name);
                         currentDish.finishTask();
-                        System.out.println("9999999currentTask = " + ((RRScheduler) scheduler).getReadyToCookDishes());
                         currentDish = scheduler.whatIsNext(currentDish, readyQueueDishes);
                         System.out.println("Chef asks scheduler what to do and got this dish : " + currentDish);
                         return currentDish;

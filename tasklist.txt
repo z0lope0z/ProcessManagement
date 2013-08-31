@@ -1,3 +1,4 @@
 RR 2 2
 adobo1 0
-adobo2 3
+tinola1 3
+adobo2 4

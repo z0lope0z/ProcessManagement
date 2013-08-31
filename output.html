@@ -1,50 +1,47 @@
 <html><head><title>Round Robin</title></head><body><table border="1" bordercolor="#000066" style="background-color:#FFFF66" width="100%" cellpadding="3" cellspacing="3"><tr><th>Time</th><th>Cook</th><th>Ready</th><th>Assistants</th><th>Remarks</th></tr><tr><td>0</td><td>adobo1(cook=2)
 </td><td>none</td><td>none</td><td>adobo1 arrives
 </td></tr><tr><td>1</td><td>adobo1(cook=1)
-</td><td>none</td><td>none</td><td>none</td></tr><tr><td>2</td><td>adobo1(cook=3)
-</td><td>none</td><td>none</td><td>none</td></tr><tr><td>3</td><td>adobo1(cook=2)
-</td><td>adobo2(cook=2)
-</td><td>none</td><td>adobo2 arrives
-</td></tr><tr><td>4</td><td>none</td><td>adobo2(cook=2)
-adobo1(cook=1)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>5</td><td>none</td><td>adobo2(cook=2)
-adobo1(cook=1)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>6</td><td>adobo2(cook=2)
-</td><td>adobo1(cook=1)
-</td><td>none</td><td>none</td></tr><tr><td>7</td><td>adobo2(cook=1)
-</td><td>adobo1(cook=1)
-</td><td>none</td><td>none</td></tr><tr><td>8</td><td>none</td><td>adobo1(cook=1)
-adobo2(cook=3)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>9</td><td>none</td><td>adobo1(cook=1)
-adobo2(cook=3)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>10</td><td>adobo1(cook=1)
-</td><td>adobo2(cook=3)
-</td><td>none</td><td>none</td></tr><tr><td>11</td><td>adobo1(cook=2)
-</td><td>adobo2(cook=3)
-</td><td>none</td><td>none</td></tr><tr><td>12</td><td>none</td><td>adobo2(cook=3)
-adobo1(cook=1)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>13</td><td>none</td><td>adobo2(cook=3)
-adobo1(cook=1)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>14</td><td>adobo2(cook=3)
-</td><td>adobo1(cook=1)
-</td><td>none</td><td>none</td></tr><tr><td>15</td><td>adobo2(cook=2)
-</td><td>adobo1(cook=1)
-</td><td>none</td><td>none</td></tr><tr><td>16</td><td>none</td><td>adobo1(cook=1)
+</td><td>none</td><td>none</td><td>none</td></tr><tr><td>2</td><td>none</td><td>none</td><td>adobo1(mix=3)
+</td><td>none</td></tr><tr><td>3</td><td>none</td><td>none</td><td>adobo1(mix=2)
+tinola1(slice=2)
+</td><td>tinola1 arrives
+</td></tr><tr><td>4</td><td>adobo2(cook=2)
+</td><td>none</td><td>adobo1(mix=1)
+tinola1(slice=1)
+</td><td>adobo2 arrives
+</td></tr><tr><td>5</td><td>none</td><td>adobo1(cook=2)
 adobo2(cook=1)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>17</td><td>none</td><td>adobo1(cook=1)
+</td><td>tinola1(cut=3)
+</td><td>context switch
+</td></tr><tr><td>6</td><td>none</td><td>adobo1(cook=2)
 adobo2(cook=1)
-</td><td>none</td><td>context switch
-</td></tr><tr><td>18</td><td>adobo1(cook=1)
+</td><td>tinola1(cut=2)
+</td><td>context switch
+</td></tr><tr><td>7</td><td>adobo1(cook=2)
 </td><td>adobo2(cook=1)
-</td><td>none</td><td>none</td></tr><tr><td>19</td><td>adobo2(cook=1)
-</td><td>none</td><td>none</td><td>none</td></tr><tr><td>20</td><td>adobo2(cook=2)
-</td><td>none</td><td>none</td><td>none</td></tr><tr><td>21</td><td>adobo2(cook=1)
-</td><td>none</td><td>none</td><td>none</td></tr><tr><td>22</td><td>none</td><td>none</td><td>none</td><td>Simulation ends.
+</td><td>tinola1(cut=1)
+</td><td>none</td></tr><tr><td>8</td><td>adobo1(cook=1)
+</td><td>adobo2(cook=1)
+tinola1(cook=5)
+</td><td>none</td><td>none</td></tr><tr><td>9</td><td>adobo2(cook=1)
+</td><td>tinola1(cook=5)
+</td><td>none</td><td>none</td></tr><tr><td>10</td><td>tinola1(cook=5)
+</td><td>none</td><td>adobo2(mix=3)
+</td><td>none</td></tr><tr><td>11</td><td>tinola1(cook=4)
+</td><td>none</td><td>adobo2(mix=2)
+</td><td>none</td></tr><tr><td>12</td><td>tinola1(cook=3)
+</td><td>none</td><td>adobo2(mix=1)
+</td><td>none</td></tr><tr><td>13</td><td>none</td><td>adobo2(cook=2)
+tinola1(cook=2)
+</td><td>none</td><td>context switch
+</td></tr><tr><td>14</td><td>none</td><td>adobo2(cook=2)
+tinola1(cook=2)
+</td><td>none</td><td>context switch
+</td></tr><tr><td>15</td><td>adobo2(cook=2)
+</td><td>tinola1(cook=2)
+</td><td>none</td><td>none</td></tr><tr><td>16</td><td>adobo2(cook=1)
+</td><td>tinola1(cook=2)
+</td><td>none</td><td>none</td></tr><tr><td>17</td><td>tinola1(cook=2)
+</td><td>none</td><td>none</td><td>none</td></tr><tr><td>18</td><td>tinola1(cook=1)
+</td><td>none</td><td>none</td><td>none</td></tr><tr><td>19</td><td>none</td><td>none</td><td>none</td><td>Simulation ends.
 </td></tr></table></body></html>

@@ -30,7 +30,6 @@ public class Main {
             dish.regen();
             dishLookUp.put(dish.name, dish);
         }
-        System.out.println("888888888dishLookUp = " + dishLookUp);
         OrderReader orderReader = new OrderReader(dishLookUp);
         costumer = new Costumer(orderReader.read());
         System.out.println("orderReader.read() = " + costumer);
