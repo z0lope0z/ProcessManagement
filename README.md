@@ -30,7 +30,8 @@ PRIORITY
 RR <time_quantum> <context_switch> - Round Robin
 ```
 
-``` tasklist.txt Example
+###tasklist.txt Example
+```
 RR 2 2
 adobo1 0
 adobo3 3
