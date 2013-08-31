@@ -24,9 +24,9 @@ You can modify the tasklists and the time that they come in inside the tasklist.
 The first line contains the type of Process Scheduler
 
 ```
-FCFS
+FCFS - First Come First Serve
 SJF - Shortest Job First
-PRIORITY
+PRIORITY - Priority
 RR <time_quantum> <context_switch> - Round Robin
 ```
 
