@@ -11,6 +11,9 @@ public class RecipeTask {
     public String name;
     public Integer time;
 
+    public RecipeTask(){
+    }
+
     public RecipeTask(String name, Integer time) {
         this.name = name;
         this.time = time;

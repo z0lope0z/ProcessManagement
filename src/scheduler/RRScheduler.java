@@ -21,6 +21,7 @@ public class RRScheduler extends AbstractScheduler {
 
     public RRScheduler(Costumer costumer, Assistants assistants, Integer timeQuantumLimit, Integer contextSwitchLimit) {
         super(costumer, assistants);
+        this.name = "Round Robin";
         this.readyToCookFood = new LinkedList<Dish>();
         this.timeQuantum = new TimeQuantum(timeQuantumLimit);
         this.contextSwitch = new ContextSwitch(contextSwitchLimit);

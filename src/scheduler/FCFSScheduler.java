@@ -23,6 +23,7 @@ public class FCFSScheduler extends AbstractScheduler {
 
     public FCFSScheduler(Costumer costumer, Assistants assistants) {
         super(costumer, assistants);
+        this.name = "First Come First Serve";
         this.readyToCookFood = new LinkedList<Dish>();
         this.lookupTable = new FCFSOrderLookup();
     }

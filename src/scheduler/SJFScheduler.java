@@ -19,6 +19,7 @@ public class SJFScheduler extends AbstractScheduler {
 
     public SJFScheduler(Costumer costumer, Assistants assistants) {
         super(costumer, assistants);
+        this.name = "Shortest Job First";
         this.readyToCookFood = new PriorityQueue<Dish>(10, new SJFComparator());
     }
 

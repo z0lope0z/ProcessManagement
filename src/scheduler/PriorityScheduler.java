@@ -19,6 +19,7 @@ public class PriorityScheduler extends AbstractScheduler {
 
     public PriorityScheduler(Costumer costumer, Assistants assistants) {
         super(costumer, assistants);
+        this.name = "Priority";
         this.readyToCookFood = new PriorityQueue<Dish>(10, new PriorityComparator());
     }
 

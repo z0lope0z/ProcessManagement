@@ -6,6 +6,7 @@ import logger.HTMLLogger;
 import models.Dish;
 import models.DishOrder;
 import models.RecipeTask;
+import reader.RecipeReader;
 import scheduler.FCFSScheduler;
 import scheduler.PriorityScheduler;
 import scheduler.RRScheduler;
@@ -24,9 +25,10 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        Time time = new Time();
         Assistants assistants = new Assistants();
         Costumer costumer = createCostumer();
+        RecipeReader recipeReader = new RecipeReader();
+        System.out.println("recipeReader = " + recipeReader.read());
         //FCFSScheduler scheduler = new FCFSScheduler(costumer, assistants);
         //SJFScheduler scheduler = new SJFScheduler(costumer, assistants);
         //PriorityScheduler scheduler = new PriorityScheduler(costumer, assistants);
@@ -34,6 +36,7 @@ public class Main {
         Chef chef = new Chef(scheduler);
         Scanner input = new Scanner(System.in);
         int num = 0;
+        HTMLLogger.title = scheduler.name;
         while ((num = input.nextInt()) >= 0) {
             HTMLLogger.time = num;
             scheduler.time(num);
@@ -42,6 +45,8 @@ public class Main {
                 HTMLLogger.addRemarks("Simulation ends.");
             }
             HTMLLogger.print();
+            HTMLLogger.write();
+            HTMLLogger.refresh();
         }
     }
 

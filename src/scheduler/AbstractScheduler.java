@@ -20,6 +20,7 @@ import java.util.Vector;
  * TODO: Brief description of the class
  */
 public abstract class AbstractScheduler implements Scheduler, TimeListener {
+    public String name;
     Costumer costumer;
     Assistants assistants;
 
