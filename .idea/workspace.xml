@@ -28,11 +28,11 @@
     <file path="/PriorityScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377927154023" ignored="false" />
     <file path="/RRScheduler.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377945295142" ignored="false" />
     <file path="/RecipeReader.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377937159078" ignored="false" />
-    <file path="/tasklist.txt" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377958168959" ignored="false" />
+    <file path="/tasklist.txt" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377958857181" ignored="false" />
     <file path="/OrderReader.java" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377957354766" ignored="false" />
     <file path="/adobo.txt" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377958103212" ignored="false" />
     <file path="/a.dummy" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377958011679" ignored="false" />
-    <file path="/tinola.txt" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377958155623" ignored="false" />
+    <file path="/tinola.txt" changelist="891ad5b3-8393-4ee5-bd03-f09567c158ab" time="1377958817772" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,7 @@
       <file leaf-file-name="adobo.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes/adobo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="3" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+            <state line="2" column="9" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,7 +116,7 @@
       <file leaf-file-name="tinola.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes/tinola.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
+            <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,7 +125,7 @@
       <file leaf-file-name="tasklist.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tasklist.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="8" selection-start="34" selection-end="34" vertical-scroll-proportion="0.16917293">
+            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -707,23 +707,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipes/adobo.txt">
+    <entry file="file://$PROJECT_DIR$/recipes/tinola.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipes/tinola.txt">
+    <entry file="file://$PROJECT_DIR$/recipes/adobo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
+        <state line="2" column="9" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tasklist.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="34" selection-end="34" vertical-scroll-proportion="0.16917293">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

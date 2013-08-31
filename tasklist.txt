@@ -1,4 +1,4 @@
-RR 2 2
+PRIORITY
 adobo1 0
 tinola1 3
 adobo2 4
