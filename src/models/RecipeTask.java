@@ -1,5 +1,7 @@
 package models;
 
+import java.util.UUID;
+
 /**
  * Created with IntelliJ IDEA.
  * User: lemano
@@ -8,15 +10,24 @@ package models;
  * To change this template use File | Settings | File Templates.
  */
 public class RecipeTask {
+    public String id;
     public String name;
     public Integer time;
 
     public RecipeTask(){
+        this.id = String.valueOf(UUID.randomUUID());
+    }
+
+    public RecipeTask(RecipeTask recipeTask){
+        this.id = String.valueOf(UUID.randomUUID());
+        this.name = recipeTask.name;
+        this.time = recipeTask.time;
     }
 
     public RecipeTask(String name, Integer time) {
         this.name = name;
         this.time = time;
+        this.id = String.valueOf(UUID.randomUUID());
     }
 
     public Boolean hasTime(){
@@ -30,6 +41,27 @@ public class RecipeTask {
 
     public Boolean isCook(){
         return name.equals("cook");
+    }
+
+    public void regen(){
+        this.id = String.valueOf(UUID.randomUUID());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof RecipeTask)) return false;
+
+        RecipeTask that = (RecipeTask) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override

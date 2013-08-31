@@ -39,11 +39,8 @@ public class RecipeReader {
             in = new Scanner(new FileReader("recipes/" + fileName));
             while (in.hasNextLine()) {
                 String line = in.nextLine();
-                System.out.println("line = " + line);
                 RecipeTask recipeTask = new RecipeTask();
                 recipeTask.name = line.split(" ")[0];
-                System.out.println("recipeTask.name = " + recipeTask.name);
-                System.out.println("recipeTask.name.equals() = " + recipeTask.name.equals("cook"));
                 recipeTask.time = Integer.parseInt(line.split(" ")[1]);
                 taskList.add(recipeTask);
             }

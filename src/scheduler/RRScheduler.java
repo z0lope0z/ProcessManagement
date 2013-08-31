@@ -60,24 +60,31 @@ public class RRScheduler extends AbstractScheduler {
 
     @Override
     public Dish whatIsNext(Dish currentDish, Vector<Dish> dishesQueue) {
+        System.out.println("------------>>>>currentDish = " + currentDish);
+        System.out.println("------------>>>>readyToCook = " + getReadyToCookDishes());
         if (contextSwitch.isContextSwitch){
             contextSwitch.incrementAndCheckLimit();
             HTMLLogger.addRemarks("context switch");
             return null;
         }
         if (currentDish == null) {
-            return dequeueReadyToCook();
+            Dish returnDish = dequeueReadyToCook();
+            return returnDish;
         } else {
             if (currentDish.isDone()) {
                 return dequeueReadyToCook();
             } else {
                 if (currentDish.currentTask().isCook()) {
                     if (currentDish.hasTime()) {
-                        if (!timeQuantum.incrementAndCheckLimit())
+                        if (!timeQuantum.incrementAndCheckLimit()){
                             //TODO
                             return currentDish;
+                        }
                         else {
                             if (getReadyToCookDishes().isEmpty()){
+                                if (currentDish.isDone()){
+                                    return null;
+                                }
                                 System.out.println("Only one dish left, no need to context switch: " + currentDish);
                                 return currentDish;
                             }

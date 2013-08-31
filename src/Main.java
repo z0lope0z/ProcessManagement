@@ -27,8 +27,10 @@ public class Main {
         List<Dish> dishList = recipeReader.read();
         Map<String, Dish> dishLookUp = new HashMap<String, Dish>();
         for (Dish dish: dishList){
+            dish.regen();
             dishLookUp.put(dish.name, dish);
         }
+        System.out.println("888888888dishLookUp = " + dishLookUp);
         OrderReader orderReader = new OrderReader(dishLookUp);
         costumer = new Costumer(orderReader.read());
         System.out.println("orderReader.read() = " + costumer);
@@ -38,16 +40,20 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int num = 0;
         HTMLLogger.title = scheduler.name;
-        while ((num = input.nextInt()) >= 0) {
+        while (true) {
             HTMLLogger.time = num;
             scheduler.time(num);
             chef.time(num);
-            if ((!chef.isCooking()) && scheduler.isEmpty(num)){
+            if (scheduler.isEmpty(num) && (!chef.isCooking())){
                 HTMLLogger.addRemarks("Simulation ends.");
+                HTMLLogger.print();
+                HTMLLogger.write();
+                break;
             }
             HTMLLogger.print();
             HTMLLogger.write();
             HTMLLogger.refresh();
+            num++;
         }
     }
 

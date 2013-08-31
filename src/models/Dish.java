@@ -17,6 +17,7 @@ public class Dish {
     public List<RecipeTask> recipeTaskList = new ArrayList<RecipeTask>();
 
     public Dish() {
+        this.id = String.valueOf(UUID.randomUUID());
     }
 
     public Dish(String name, List<RecipeTask> recipeTaskList) {
@@ -64,6 +65,13 @@ public class Dish {
 
     public Boolean isCook(){
         return currentTask().name.equals("cook");
+    }
+
+    public void regen(){
+        this.id = String.valueOf(UUID.randomUUID());
+        for (RecipeTask task : recipeTaskList){
+            task.regen();
+        }
     }
 
     @Override

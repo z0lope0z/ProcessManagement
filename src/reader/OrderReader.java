@@ -3,6 +3,7 @@ package reader;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import models.Dish;
 import models.DishOrder;
+import models.RecipeTask;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -32,7 +33,7 @@ public class OrderReader {
     public Integer RR_CONTEXT_SWITCH = 2;
 
     public OrderReader(Map<String, Dish> dishLookUp) {
-        this.dishLookUp.putAll(dishLookUp);
+        this.dishLookUp = dishLookUp;
     }
 
     public List<DishOrder> read() {
@@ -49,7 +50,12 @@ public class OrderReader {
                 Matcher matcher = pattern.matcher(taskName);
                 matcher.find();
                 String dishName = matcher.group(1);
-                orderList.add(new DishOrder(dishLookUp.get(dishName), when));
+                Dish dish = new Dish();
+                dish.name = taskName;
+                for (RecipeTask recipeTask: dishLookUp.get(dishName).recipeTaskList){
+                    dish.recipeTaskList.add(new RecipeTask(recipeTask));
+                }
+                orderList.add(new DishOrder(dish, when));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
